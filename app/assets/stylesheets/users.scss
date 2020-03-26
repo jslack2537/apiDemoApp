@@ -1,0 +1,17 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.child {
+    background-color: lightgrey;
+    width: auto;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
