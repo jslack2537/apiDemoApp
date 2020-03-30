@@ -11,6 +11,9 @@ data_hash = JSON.parse(file, symbolize_names: true)
 records = JSON.parse(File.read('db/people.json'))
 
 records.each do |record| 
-    User.create!(record.except('logins').merge('password' => 'encryptedpassword'))
-    Login.create!(record['logins'])
+    User.create!(record.except('logins').merge('password' => 'encrypted password'))
+end
+
+records.each do |record|
+     Login.create!(record['logins'])
 end

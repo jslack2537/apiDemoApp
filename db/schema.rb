@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_194634) do
+ActiveRecord::Schema.define(version: 2020_03_30_164743) do
 
   create_table "logins", force: :cascade do |t|
-    t.integer "user_id"
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_logins_on_user_id", unique: true
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_logins_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
