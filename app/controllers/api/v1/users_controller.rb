@@ -9,8 +9,4 @@ class Api::V1::UsersController < ApplicationController
     def show
     end
 
-    private
-
-    range1 = (0..50)
-
 end
