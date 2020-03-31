@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,11 +10,8 @@
 require 'json'
 records = JSON.parse(File.read('db/people.json'))
 
-records.each do |record| 
-    u = User.new(record.except('logins').merge('password' => 'encrypted password'))
-    u.logins = record['logins'].map{|l| Login.new(l)} 
-    u.save!
-  end
-
-
-
+records.each do |record|
+  u = User.new(record.except('logins').merge('password' => 'encrypted password'))
+  u.logins = record['logins'].map { |l| Login.new(l) }
+  u.save!
+end
